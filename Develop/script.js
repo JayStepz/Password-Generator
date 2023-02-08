@@ -1,37 +1,4 @@
 // Assignment code here
-var writePassword = function() {
-  //Asking for password length
-  var userInput = window.prompt("Please input the desired password length of 8 to 128 characters.");
-  
-  //Click Cancel, end function
-  if (!userInput) {
-    return;
-  }
-}
-//lengthCharacters.prompt("Please choose a password length of 8 to 128 characters.")
-  //Mandatory response, only valid if a number 8 to 128 is selected.
-//Generates array for character length 8-128
-var lengthCharacters = [];
-for (var i = 8; i <= 128; i++) {
-  lengthCharacters.push(i);
-}
-console.log(lengthCharacters);
-
-
-var lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz" //yes or no
-var uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" //yes or no
-var numericCharacters = "1234567890" //yes or no
-var specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~" //yes or no //Opting to excludes spaces and quotations
-//Each of the above need a prompt and a response. Must have one yes, minimum.
-//Generated password must display in an alert or written in the box.
-//Use math.floor and math.random from the mini-project?
-
-
-//lowercaseCharacters.prompt("Would you like lowercase characters in your password?")
-//uppercaseCharacters.prompt("Would you like uppercase characters in your password?")
-//numericCharacters.prompt("Would you like numbers in your password?")
-//specialCharacters.prompt("Would you like special characters in your password?")
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -47,3 +14,39 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//For establishing acceptable password character length. Also easier to come back to change in the future, should I wish or need to do so.
+const minLength = 8;
+const maxLength = 128;
+
+//Data sets for password creation
+const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz" 
+const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+const numericCharacters = "1234567890" 
+const specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~" 
+
+//Password generation begins here
+function generatePassword() {
+  //Number() lets the prompt recognize that a number/integer was put in
+  let lengthInput = Number(window.prompt("Please input the desired password length of 8 to 128 characters."));
+  //if statement is checking for any or all of those inputs to be true (but a bad true). Input number < 8, number > 128, or not a number at all is rejected with an alert.
+  if (lengthInput <= minLength || lengthInput >= maxLength || typeof(lengthInput) !== "number") {
+    window.alert("Your value, " + lengthInput + ", is invalid. Please enter a number from " + minLength + " to " + maxLength + ".");
+    return "Please try again.";
+  }
+//Something neat my programming buddy showed me: do/while loop. Will run through all variables in order (do). Checks for any variable to be different from the rest or for all
+//to be the same (while). While will break the Do loop when status is met.
+  var i = 0;
+  do {
+    if (i > 0) {
+      window.confirm("Please select one or more character sets.");
+    }
+    var useLowercase = window.confirm("Would you like to use lowercase characters in your password?");
+    var useUppercase = window.confirm("Would you like to use uppercase characters in your password?");
+    var useNumeric = window.confirm("Would you like to use numbers in your password?");
+    var useSpecial = window.confirm("Would you like to use special characters in your password?");
+    i++;
+  } while (!useLowercase && !useUppercase && !useNumeric && !useSpecial);
+
+// TODO: Look up string methods, array methods, math.random() to finish password creation 
+}
