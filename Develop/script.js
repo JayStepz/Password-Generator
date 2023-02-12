@@ -29,13 +29,17 @@ const specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~" //Opted to not use d
 function generatePassword() {
   // Number() lets the prompt recognize that a number/integer was put in
   let lengthInput = Number(window.prompt("Please input the desired password length of 8 to 128 characters."));
+  
   // if statement is checking for any or all of those inputs to be true (but a bad true). Input number < 8, number > 128, or not a number at all is rejected with an alert.
-  if (lengthInput < minLength || lengthInput > maxLength || typeof(lengthInput) !== "number") {
+  // Later note: Input as a letter was being recognized as NaN most likely due to Number() in line 31. Added additional check in line 35 for a number that is also not a number.
+  if (lengthInput < minLength || lengthInput > maxLength || typeof(lengthInput) !== "number" || (typeof(lengthInput) === "number" && isNaN(lengthInput))) {
     window.alert("Your value, " + lengthInput + ", is invalid. Please enter a number from " + minLength + " to " + maxLength + ".");
     return "Please try again.";
   }
+
 // Something neat my programming buddy showed me: do/while loop. Will run through all variables in order (do). Checks for any variable to be different from the rest or for all
 // to be the same (while). While will break the Do loop when status is met. The status requires at least one out of four to be false (true in do, turned false in while).
+// Used in lieu of the 5 if statements I was going to use originally.
 // Later note:
 // Read up on the do while loop. The reason for making a true outcome false is to be able to end the loop. Otherwise, the true outcome(s) would result in an infinite loop.
   var i = 0;
@@ -43,7 +47,7 @@ function generatePassword() {
     if (i > 0) {
       window.confirm("Please select one or more character sets.");
     }
-    // The folowwing 4 lines will produce either true or false
+    // The folowing 4 lines will produce either true or false
     var useLowercase = window.confirm("Would you like to use lowercase characters in your password?"); 
     var useUppercase = window.confirm("Would you like to use uppercase characters in your password?");
     var useNumeric = window.confirm("Would you like to use numbers in your password?");
@@ -71,9 +75,8 @@ function generatePassword() {
     // Establishing a lenth variable because the amount of characters to pull from have possible outcomes from the loop.
     var n = prePass.length;
     
-    // bird is the final landing for characters to be pulled from for the password.
-    // Why "bird"? Because bird is the word!
-    var bird = "";
+    // finPass is the final landing for characters to be pulled from for the password.
+    var finPass = "";
     
     // for loop that runs to length input from prompt, 8-128 characters.
     // Math.random() grabs from a random position in a string. Math.random doesn't always grab a whole number, so...
@@ -81,7 +84,7 @@ function generatePassword() {
     // charAt() brings the character at that position to bird.
     // This will loop until lengthInput has been satisfied.
     for (var i = 0; i < lengthInput; i++) {
-    bird += prePass.charAt(Math.floor(Math.random() * n));
+    finPass += prePass.charAt(Math.floor(Math.random() * n));
     };
-    return bird;
+    return finPass;
 }
