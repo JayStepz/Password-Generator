@@ -4,13 +4,13 @@ This is a password generator. You can use this to generate a password with lower
 Please note that this is not cryptologically secure and that the generated password may not always meet the criteria for your particular password requirements.
 Use with caution.
 ## Preview
-[Preview Image Here]
-# How to Use
-[URL Here]
+[Password Generator Preview](./assets/PassGen.JPG)
+## How to Use
+
 When at the page, click the red "Generate Password" button. At the first prompt, enter how long you would like for your password to be using a number from 8 to 128.
-[Prompt Preview Here]
+[Preview of the input prompt](./assets/PassPrompt.jpg)
 An alert will be given if you enter anything other than that. Please use 8, 9, 10, etc.
-[Prompt Choice Example Here]
+[Example of a characterset prompt](./assets/PassChoicePrompt.JPG)
 The second prompt will ask if you would like to use lowercase letters in your password. OK is yes, Cancel is no.
 
 The third prompt will ask if you would like to use uppercase letters in your password. OK is yes, Cancel is no.
