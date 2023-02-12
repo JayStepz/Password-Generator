@@ -8,7 +8,7 @@ Use with caution.
 ## How to Use
 Click this link to go to the Password Generator. https://jaystepz.github.io/Password-Generator/
 When at the page, click the red "Generate Password" button. At the first prompt, enter how long you would like for your password to be using a number from 8 to 128.
-![JayStepz](./assets/PassPrompt.jpg "Input prompt preview")
+![JayStepz](./assets/PassPrompt.JPG "Input prompt preview")
 An alert will be given if you enter anything other than that. Please use 8, 9, 10, etc.
 ![JayStepz](./assets/PassChoicePrompt.JPG "Choice prompt preview")
 The second prompt will ask if you would like to use lowercase letters in your password. OK is yes, Cancel is no.
