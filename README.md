@@ -4,13 +4,13 @@ This is a password generator. You can use this to generate a password with lower
 Please note that this is not cryptologically secure and that the generated password may not always meet the criteria for your particular password requirements.
 Use with caution.
 ## Preview
-[Password Generator Preview](./assets/PassGen.JPG)
+![JayStepz](./assets/PassGen.JPG "Page preview")
 ## How to Use
-
+Click this link to go to the Password Generator. https://jaystepz.github.io/Password-Generator/
 When at the page, click the red "Generate Password" button. At the first prompt, enter how long you would like for your password to be using a number from 8 to 128.
-[Preview of the input prompt](./assets/PassPrompt.jpg)
+![JayStepz](./assets/PassPrompt.jpg "Input prompt preview")
 An alert will be given if you enter anything other than that. Please use 8, 9, 10, etc.
-[Example of a characterset prompt](./assets/PassChoicePrompt.JPG)
+![JayStepz](./assets/PassChoicePrompt.JPG "Choice prompt preview")
 The second prompt will ask if you would like to use lowercase letters in your password. OK is yes, Cancel is no.
 
 The third prompt will ask if you would like to use uppercase letters in your password. OK is yes, Cancel is no.
